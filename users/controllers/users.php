@@ -780,13 +780,13 @@ class Users extends Front_Controller
                 $service = $this->hybridauthlib->authenticate($provider);
                 if ($service->isUserConnected())
                 {
-                    if ($this->auth->login() == TRUE)
+                    if ($this->auth->login('','',FALSE,TRUE) == TRUE)
                     {
                         Template::redirect();
                     }
                     //Not registered into account
                     $user_hauth = $service->getUserProfile();
-                    if ($this->user_model->is_unique('email', $user_hauth->email) === FALSE)
+                    if ($this->user_model->is_unique('email', $user_hauth->email) === TRUE)
                     {
                         $this->register_provider_user($provider, $user_hauth);
                     }
@@ -940,3 +940,4 @@ class Users extends Front_Controller
 
 /* Front-end Users Controller */
 /* End of file users.php */
+
