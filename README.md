@@ -21,7 +21,7 @@ OpenID
 
 
 
-There is a managment tool added to the users to allow you to turn on and off HybridAuth as well as add in your ID's and Key's 
+There is a managment tool added to the users to allow you to turn on and off HybridAuth as well as add in your ID's and Key's. In the auth lib within the method `get_hauth_user()` there is a note about an if statement to remove. If this `if` statement is removed then the user can login to their account with which ever provider they choose so long as it is the same email address. If it is kept in then the user can only register with their first initial provider and all the other providers they attempt to login in with will be revoked.
 
 This version uses HybridAuth 2.1.2 and has beed tested on Bonfire 0.7+
 
