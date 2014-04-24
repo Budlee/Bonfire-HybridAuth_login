@@ -327,7 +327,7 @@ class Auth
         $this->ci->session->sess_destroy();
 
         //Destroy any hauth
-        $this->ci->load->library('HybridAuthLib');
+        $this->ci->load->library('users/HybridAuthLib');
         $this->ci->hybridauthlib->logoutAllProviders();
     }
 
@@ -1105,7 +1105,7 @@ class Auth
     private function get_hauth_user()
     {
         $user = FALSE;
-        $this->ci->load->library('HybridAuthLib');
+        $this->ci->load->library('users/HybridAuthLib');
         $providers = $this->ci->hybridauthlib->getConnectedProviders();
         if (count($providers) == 1)
         {
