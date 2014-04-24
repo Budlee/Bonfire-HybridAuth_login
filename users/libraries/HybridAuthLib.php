@@ -21,7 +21,7 @@ class HybridAuthLib extends Hybrid_Auth
     {
         $this->ci = & get_instance();
         $this->ci->load->helper('url_helper');
-        $this->ci->load->model('user_model');
+        $this->ci->load->model('users/user_model');
         $loc_config = module_config('users');
 
         $config = $this->ci->user_model->get_config();
