@@ -232,6 +232,7 @@ $lang['us_sign_up_with_alternative'] = 'Log in using any of the following servic
 $lang['us_ha_authenticate_error'] = 'Cannot authenticate user';
 $lang['us_ha_disabled_provider'] = 'User requested for HybridAuth to login with disabled provider: ';
 $lang['us_ha_provider_unavaliable'] = 'It is not possible to login with this provider';
+$lang['us_ha_no_email'] = 'Unable to retrieve email address';
 
 $lang['us_ha_error_unknown'] = 'Unspecified error.';
 $lang['us_ha_error_configuration'] = 'Hybriauth configuration error.';

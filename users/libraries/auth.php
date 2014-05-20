@@ -1119,7 +1119,7 @@ class Auth
                 $this->ci->benchmark->mark('hybridauth_profile_end');
                 
                 //NOTE: Remove the following statement to allow user to login with any provider of the same email address
-                if ($user->hauth_provider != $providers[0])
+		if ($user != FALSE && $user->hauth_provider != $providers[0])
                 {
                     Template::set_message('email registered by different provider', 'error');
                     return FALSE;

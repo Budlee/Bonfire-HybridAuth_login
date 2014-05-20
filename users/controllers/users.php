@@ -786,6 +786,11 @@ class Users extends Front_Controller
                     }
                     //Not registered into account
                     $user_hauth = $service->getUserProfile();
+		    //A rare issue I found with someones account with an expired email address
+                    if($user_hauth->email == NULL || empty($user_hauth->email))
+                    {
+                        Template::set_message(lang('us_ha_no_email'), 'error');
+                    }
                     if ($this->user_model->is_unique('email', $user_hauth->email) === TRUE)
                     {
                         $this->register_provider_user($provider, $user_hauth);
