@@ -80,7 +80,7 @@ class Migration_Install_hauth_provider_options extends Migration
     public function down()
     {
         $this->dbforge->drop_table($this->table_name);
-    
+    	$this->db->delete('settings', array('name' => 'hybridauth_enabled'));
     }
 
     //--------------------------------------------------------------------
